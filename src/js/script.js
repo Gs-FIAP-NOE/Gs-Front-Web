@@ -63,3 +63,12 @@ document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('ac
         // Trocar a cada 8 segundos
         setInterval(nextStory, 5000);
     }
+// Carousel fots
+    const carousel = document.querySelector('.carousel-container');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    let currentIndex = 0;
+    const slideCount = slides.length;
