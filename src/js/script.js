@@ -9,3 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
         navLinks.classList.toggle('active');
     });
  });
+
+
+ // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function () {
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
