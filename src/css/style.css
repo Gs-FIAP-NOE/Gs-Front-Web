@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    box-sizing: border-box;
+    color: var(--color);
+}
+
+:root {
+    --transition: all 0.4s ease;
+    --border-radius: 10px;
+    --box-shadow: 0px 0px 10px 2px #00000023;
+    --background: white;
+    --primary-color: #c00000;
+    --secundary-color: #f5f5f5;
+    --color: #1e1e1e;
+    --color-gen: #f5f5f5;
+    --dark-color: #1e1e1e;
+    --font-tittle: 2.1rem;
+    --font-tittle2: 1.3rem;
+    --font-size: 1.1rem;
+    --font-size2: 0.9rem;
+    --font-size3: 0.7rem;
+}
