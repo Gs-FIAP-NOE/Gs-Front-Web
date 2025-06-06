@@ -35,3 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('theme', theme);
         });
     });
+
+    // Apply saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('active');
