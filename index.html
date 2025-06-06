@@ -343,15 +343,46 @@
         </section>
 
 
-
+        <!-- Quiz Section -->
+        <section class="quiz">
+            <h2>Teste Seu Conhecimento!</h2>
+            <div class="quiz-container" id="quizContainer">
+                <div class="quiz-intro">
+                    <p>Responda nosso quiz e descubra como você pode se preparar melhor para enchentes.</p>
+                    <button id="startQuiz">INICIAR QUIZ</button>
+                </div>
+                <div class="quiz-questions" id="quizQuestions" style="display: none;">
+                    <div class="question" id="question"></div>
+                    <div class="options" id="options"></div>
+                    <button id="nextQuestion" style="display: none">PRÓXIMA</button>
+                </div>
+                <div class="quiz-result" id="quizResult" style="display: none;">
+                    <h3 id="resultTitle"></h3>
+                    <p id="resultText"></p>
+                    <button id="restartQuiz">REFAZER QUIZ</button>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <h1>footer</h1>
+    <footer id="footer">
+        <div class="logo">
+            <a href="/index.html"><img src="./src/assets/img/logo-light.png" alt="logo"></a>
+        </div>
+        <section class="ctn-footer">
+            <section class="ctn-equipe">
+                <div class="links">
+                    <a href="./src/pages/app.html" target="_blank">DOWNLOAD</a>
+                    <a href="./src/pages/contato.html" target="_blank">CONTATO</a>
+                </div>
+            </section>
+        </section>
+        <section class="direitos">
+            <h4>&copy;NOÉ. Todos Os Direitos Reservados - <span><a href="./src/pages/equipe.html">EQUIPE</a>
+        </section>
     </footer>
 
     <script src="./src/js/script.js"></script>
-
 </body>
 
 </html>
