@@ -57,3 +57,9 @@ document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('ac
             currentStory = (currentStory + 1) % stories.length;
             showStory(currentStory);
         }    
+        // Mostrar primeira história
+        showStory(currentStory);
+
+        // Trocar a cada 8 segundos
+        setInterval(nextStory, 5000);
+    }
