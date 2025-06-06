@@ -37,6 +37,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Apply saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('active');
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('active');
+
+// Carrossel de histórias
+    const storiesCarousel = document.querySelector('.stories-carousel');
+    if (storiesCarousel) {
+        const stories = document.querySelectorAll('.story');
+        let currentStory = 0;
+
+        function showStory(index) {
+            stories.forEach((story, i) => {
+                story.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextStory() {
+            currentStory = (currentStory + 1) % stories.length;
+            showStory(currentStory);
+        }    
