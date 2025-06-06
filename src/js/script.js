@@ -18,3 +18,20 @@ document.addEventListener('DOMContentLoaded', function () {
             navLinks.classList.remove('active');
         });
     });
+
+// Theme Switcher
+    const themeButtons = document.querySelectorAll('.theme-btn');
+
+    themeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const theme = this.getAttribute('data-theme');
+            document.documentElement.setAttribute('data-theme', theme);
+
+            // Update active button
+            themeButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Save theme preference
+            localStorage.setItem('theme', theme);
+        });
+    });
