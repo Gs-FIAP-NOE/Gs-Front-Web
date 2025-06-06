@@ -72,3 +72,11 @@ document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('ac
 
     let currentIndex = 0;
     const slideCount = slides.length;
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
