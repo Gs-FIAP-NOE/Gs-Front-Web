@@ -8,10 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
         this.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
- });
 
-
- // Close mobile menu when clicking on a link
+    // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function () {
             mobileMenu.classList.remove('active');
@@ -19,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-// Theme Switcher
+    // Theme Switcher
     const themeButtons = document.querySelectorAll('.theme-btn');
 
     themeButtons.forEach(button => {
@@ -37,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Apply saved theme
-const savedTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
-document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('active');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.querySelector(`.theme-btn[data-theme="${savedTheme}"]`).classList.add('active');
 
-// Carrossel de histórias
+    // Carrossel de histórias
     const storiesCarousel = document.querySelector('.stories-carousel');
     if (storiesCarousel) {
         const stories = document.querySelectorAll('.story');
@@ -56,14 +54,16 @@ document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('ac
         function nextStory() {
             currentStory = (currentStory + 1) % stories.length;
             showStory(currentStory);
-        }    
+        }
+
         // Mostrar primeira história
         showStory(currentStory);
 
         // Trocar a cada 8 segundos
-        setInterval(nextStory, 5000);
-    }
-// Carousel fots
+        setInterval(nextStory, 5000);
+    }
+
+    // Carousel fots
     const carousel = document.querySelector('.carousel-container');
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.querySelector('.prev');
@@ -71,7 +71,8 @@ document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('ac
     const dotsContainer = document.querySelector('.carousel-dots');
 
     let currentIndex = 0;
-    const slideCount = slides.length;
+    const slideCount = slides.length;
+
     // Create dots
     slides.forEach((_, index) => {
         const dot = document.createElement('span');
@@ -79,11 +80,12 @@ document.querySelector(.theme-btn[data-theme="${savedTheme}"]).classList.add('ac
         if (index === 0) dot.classList.add('active');
         dot.addEventListener('click', () => goToSlide(index));
         dotsContainer.appendChild(dot);
-    });
-const dots = document.querySelectorAll('.dot');
+    });
+
+    const dots = document.querySelectorAll('.dot');
 
     function updateCarousel() {
-        carousel.style.transform = translateX(-${currentIndex * 100}%);
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
         // Update dots
         dots.forEach((dot, index) => {
@@ -107,7 +109,8 @@ const dots = document.querySelectorAll('.dot');
     }
 
     nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide); 
+    prevBtn.addEventListener('click', prevSlide);
+
     // Auto-advance carousel
     let carouselInterval = setInterval(nextSlide, 5000);
 
@@ -117,7 +120,28 @@ const dots = document.querySelectorAll('.dot');
         clearInterval(carouselInterval);
     });
 
-    carouselSecti
+    carouselSection.addEventListener('mouseleave', () => {
+        carouselInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Tabs de benefícios
+    const benefitTabButtons = document.querySelectorAll('.benefit-tab');
+    const benefitContents = document.querySelectorAll('.benefits-content');
+
+    benefitTabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const benefitId = this.getAttribute('data-benefit');
+
+            // Remover classe ativa de todos os botões e conteúdos
+            benefitTabButtons.forEach(btn => btn.classList.remove('active'));
+            benefitContents.forEach(content => content.classList.remove('active'));
+
+            // Adicionar classe ativa ao botão e conteúdo selecionado
+            this.classList.add('active');
+            document.getElementById(benefitId).classList.add('active');
+        });
+    });
+
     // Quiz Functionality
     const quizData = [
         {
@@ -287,13 +311,13 @@ const dots = document.querySelectorAll('.dot');
 
         if (percentage >= 80) {
             resultTitle.textContent = 'Excelente!';
-            resultText.textContent = Você acertou ${score} de ${quizData.length} perguntas! Você conhece muito sobre prevenção de enchentes.;
+            resultText.textContent = `Você acertou ${score} de ${quizData.length} perguntas! Você conhece muito sobre prevenção de enchentes.`;
         } else if (percentage >= 50) {
             resultTitle.textContent = 'Bom trabalho!';
-            resultText.textContent = Você acertou ${score} de ${quizData.length} perguntas! Você sabe o básico sobre o NOÉ.;
+            resultText.textContent = `Você acertou ${score} de ${quizData.length} perguntas! Você sabe o básico sobre o NOÉ.`;
         } else {
             resultTitle.textContent = 'Pode melhorar!';
-            resultText.textContent = Você acertou ${score} de ${quizData.length} perguntas. Aprenda mais sobre o NOÉ para se proteger melhor.;
+            resultText.textContent = `Você acertou ${score} de ${quizData.length} perguntas. Aprenda mais sobre o NOÉ para se proteger melhor.`;
         }
     }
 
