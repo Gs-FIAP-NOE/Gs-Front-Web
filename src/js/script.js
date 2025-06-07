@@ -108,3 +108,13 @@ const dots = document.querySelectorAll('.dot');
 
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide); 
+    // Auto-advance carousel
+    let carouselInterval = setInterval(nextSlide, 5000);
+
+    // Pause on hover
+    const carouselSection = document.querySelector('.solution-carousel');
+    carouselSection.addEventListener('mouseenter', () => {
+        clearInterval(carouselInterval);
+    });
+
+    carouselSecti
