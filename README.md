@@ -7,7 +7,7 @@
 
 ### Muito Antes Da Tempestade, Vem NOÉ!
 
-# [noe.com.br](https://gs-fiap-noe.github.io/Gs-FrontEnd-WebDev/)
+# [noe.com.br](https://gs-fiap-noe.github.io/Gs-Front-Web/)
 </div>
 
 # 🎯 Funcionalidades Principais
